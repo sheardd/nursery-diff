@@ -2,7 +2,7 @@
   "name": "nursery-diff",
   "version": "1.0.0",
   "description": "bespoke visual diff testing for Project Nursery",
-  "main": "index.js",
+  "main": "run.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
