@@ -2,9 +2,9 @@ const Differencify = require('differencify');
 const differencify = new Differencify();
 
 async function testPath(url, path, credentials = false) {
-	const target = differencify.init({ chain: false });
-	await target.launch();
-	const page = await target.newPage();
+	const browser = differencify.init({ chain: false });
+	await browser.launch();
+	const page = await browser.newPage();
 	await page.setViewport({ width: 1600, height: 1200 });
 	if (credentials) {
 		await page.authenticate(credentials);
@@ -12,9 +12,9 @@ async function testPath(url, path, credentials = false) {
 	await page.goto(url + path.endpoint);
 	await page.waitFor(1000);
 	const image = await page.screenshot();
-	await target.toMatchSnapshot(image)
+	await browser.toMatchSnapshot(image)
 	await page.close();
-	await target.close();
+	await browser.close();
 }
 
 module.exports = {
