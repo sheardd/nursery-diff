@@ -7,7 +7,6 @@ async function testPath(url, path, credentials = false) {
 	const page = await target.newPage();
 	await page.setViewport({ width: 1600, height: 1200 });
 	if (credentials) {
-		console.log("credentials: " + credentials);
 		await page.authenticate(credentials);
 	}
 	await page.goto(url + path.endpoint);
