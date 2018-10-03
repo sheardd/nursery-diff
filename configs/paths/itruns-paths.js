@@ -1,6 +1,8 @@
 module.exports = {
 	"paths": [
 	{"name": "home",
-	"endpoint": "/blog"}
+	"endpoint": "/blog"},
+	{"name": "projects",
+	"endpoint": "/projects"}
 	]
 };
