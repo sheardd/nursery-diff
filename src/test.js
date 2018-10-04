@@ -12,9 +12,13 @@ async function testPath(url, path, credentials = false) {
 	await page.goto(url + path.endpoint);
 	await page.waitFor(1000);
 	const image = await page.screenshot();
-	await browser.toMatchSnapshot(image)
+	await browser.toMatchSnapshot(image, (results) => {
+		console.log(results);
+	});
 	await page.close();
 	await browser.close();
+
+	return;
 }
 
 module.exports = {
@@ -25,5 +29,6 @@ module.exports = {
 			await testPath(url, path, credentials);
 		}
 		console.log("Tests Complete");
+		return;
 	}
 };
