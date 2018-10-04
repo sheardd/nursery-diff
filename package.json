@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/sheardd/nursery-diff#readme",
   "dependencies": {
-    "differencify": "^1.5.0"
+    "differencify": "^1.5.0",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {}
 }
