@@ -4,13 +4,12 @@ const differencify = new Differencify();
 async function testPath(url, path, credentials = false, widths = false) {
 	const browser = differencify.init({ testName: path.name,
 									chain: false });
-	// var width;
 	if (widths) {
 		for (var i = 0; i < widths.length; i++) {
 			await capture(browser, url, path, width = widths[i], credentials);
 		}
 	} else {
-		await capture(browser, url, path, width = 1600, credentials);
+		await capture(browser, url, path, width = 1440, credentials);
 	}
 	
 	await browser.close();
@@ -38,6 +37,9 @@ async function capture(browser, url, path, width, credentials = false){
 module.exports = {
 	testAllPaths : async function(url, paths, credentials, widths = false){
 		await differencify.launchBrowser();
+		if (widths) {
+			widths.sort((a, b) => (a - b));
+		}
 		for (var i = 0; i < paths.length; i++){
 			var path = paths[i];
 			console.log("Capturing: " + path.name);
