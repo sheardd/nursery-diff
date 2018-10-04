@@ -1,6 +1,6 @@
 const user = "projectnursery";
 const pass = "pnthepassword";
-const paths = require("./paths/itruns-paths.js");
+const paths = require("./paths/pn-paths.js");
 
 module.exports = {
 	credentials : {
@@ -8,5 +8,5 @@ module.exports = {
 		password: pass
 	},
 	paths : paths.paths,
-	url : "https://itruns.co.uk"
+	widths: [480, 600, 1024, 1440]
 };
