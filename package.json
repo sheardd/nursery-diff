@@ -4,7 +4,7 @@
   "description": "bespoke visual diff testing for Project Nursery",
   "scripts": {
     "start": "npm run teardown && npm test",
-    "teardown": "rm -r differencify_reports",
+    "teardown": "rm -r differencify_reports || true",
     "test": "url=\"https://mirror.itruns.co.uk\" node run.js && url=\"https://itruns.co.uk\" node run.js"
   },
   "repository": {
