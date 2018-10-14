@@ -75,7 +75,7 @@ module.exports = {
 	{"name": "guide-main",
 	"endpoint": "/resources/",
 	"options": {
-			"timeout": 60000,
+			"timeout": 65000,
 		}
 	},
 	{"name": "guide-category",
