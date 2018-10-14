@@ -25,7 +25,12 @@ async function capture(browser, url, path, width, credentials = false){
 	if (credentials) {
 		await page.authenticate(credentials);
 	}
-	await page.goto(url + path.endpoint);
+	if (path.options) {
+		console.log("path has options");
+		await page.goto(url + path.endpoint, path.options);
+	} else {
+		await page.goto(url + path.endpoint);
+	}
 	await page.waitFor(1000);
 	const image = await page.screenshot();
 	await browser.toMatchSnapshot(image, (results) => {

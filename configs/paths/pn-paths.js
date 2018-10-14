@@ -73,9 +73,17 @@ module.exports = {
 	{"name": "products-gifts",
 	"endpoint": "/category/pn/discover-products/gift-ideas/"},
 	{"name": "guide-main",
-	"endpoint": "/resources/"},
+	"endpoint": "/resources/",
+	"options": {
+			"timeout": 60000,
+		}
+	},
 	{"name": "guide-category",
-	"endpoint": "/resources/?guide_service=apparel-accessories"},
+	"endpoint": "/resources/?guide_service=apparel-accessories",
+	"options": {
+			"timeout": 60000,
+		}
+	},
 	{"name": "guide-author",
 	"endpoint": "/author/busybeeskids/"},
 	{"name": "giveaways-top-lvl",
@@ -89,7 +97,11 @@ module.exports = {
 	{"name": "other-press",
 	"endpoint": "/press-kit/"},
 	{"name": "other-experts",
-	"endpoint": "/childrens-design-experts/"},
+	"endpoint": "/childrens-design-experts/",
+	"options": {
+			"timeout": 60000,
+		}
+	},
 	{"name": "other-contact",
 	"endpoint": "/contact-us/"},
 	{"name": "other-terms",
