@@ -27,7 +27,13 @@ async function capture(browser, url, path, width, credentials = false){
 	}
 	if (path.options) {
 		console.log("path has options");
-		await page.goto(url + path.endpoint, path.options);
+		try {
+			await page.goto(url + path.endpoint, path.options)
+		} catch(error) {
+			console.log("Capture Error:");
+			console.log("---- " + error);
+			return;
+		}
 	} else {
 		await page.goto(url + path.endpoint);
 	}
