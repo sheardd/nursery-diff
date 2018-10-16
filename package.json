@@ -6,7 +6,8 @@
     "start": "npm run teardown && npm test && npm run compile",
     "teardown": "rm -r differencify_reports || true",
     "test": "url=\"https://mirror.itruns.co.uk\" node run.js && url=\"https://itruns.co.uk\" node run.js",
-    "compile": "node src/file-compiler.js"
+    "compile": "node src/file-compiler.js",
+    "upload": "bash src/upload.sh"
   },
   "repository": {
     "type": "git",
