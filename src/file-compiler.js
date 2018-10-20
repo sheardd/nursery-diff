@@ -26,7 +26,16 @@ function moveFiles(group){
   fsFiles = fs.readdirSync(filepath, {encoding: 'utf8', withFileTypes: true});
   fsFiles.forEach(function(file) {
     if (file.name[0] !== "." && !file.isDirectory()) {
-      reformatAndMove(file.name, filepath, group);
+      if (group === "snaps") {
+        if (fs.existsSync("differencify_reports/__image_snapshots__/__differencified_output__/"
+            + file.name.replace("snap", "differencified"))) {
+          reformatAndMove(file.name, filepath, group);
+        } else {
+          console.log("No diff found for " + file.name + ", skipping...");
+        }
+      } else {
+        reformatAndMove(file.name, filepath, group);
+      }
     }
   });
 }
