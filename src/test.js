@@ -38,7 +38,7 @@ async function capture(browser, url, path, width, credentials = false){
 		await page.goto(url + path.endpoint);
 	}
 	await page.waitFor(1000);
-	const image = await page.screenshot();
+	const image = await page.screenshot({fullPage: true});
 	await browser.toMatchSnapshot(image, (results) => {
 		console.log(results);
 	});
