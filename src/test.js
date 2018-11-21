@@ -23,10 +23,11 @@ async function testPath(url, path, pathsNum, index, credentials = false, widths 
 }
 
 async function capture(browser, url, path, width, credentials = false){
-	console.log("Capturing " + url + " at " + width + "px");
+	console.log("Capturing " + path.name + " at " + url + " at " + width + "px");
 	const page = await browser.newPage();
 	const viewport = Object.assign(page.viewport(), {width: width});
 	await page.setViewport(viewport);
+	await page.setCacheEnabled(false);
 	if (credentials) {
 		await page.authenticate(credentials);
 	}
@@ -42,7 +43,7 @@ async function capture(browser, url, path, width, credentials = false){
 	} else {
 		await page.goto(url + path.endpoint);
 	}
-	await page.waitFor(1000);
+	await page.waitFor(5000);
 	const image = await page.screenshot({fullPage: true});
 	await browser.toMatchSnapshot(image, (results) => {
 		console.log("Result:");
