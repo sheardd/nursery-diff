@@ -1,6 +1,6 @@
-const user = "projectnursery";
-const pass = "pnthepassword";
-const paths = require("./paths/pn-paths.js");
+const user = "julia";
+const pass = "Tr0uty8ab0n3";
+const paths = require("./paths/jw-paths.js");
 
 module.exports = {
 	credentials : {
