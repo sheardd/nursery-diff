@@ -1,3 +1,4 @@
 node_modules/
 differencify_reports/
 exports/
+src/locals.sh

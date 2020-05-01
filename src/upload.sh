@@ -1,15 +1,16 @@
 #!/bin/sh
-HOST='sftp://35.176.194.112'
-USER='ftpu'
-PASSWORD='itftpuruns'
 
-# DISTANT DIRECTORY
-REMOTE_DIR='uploads'
+# REMOTE DIRECTORY
+REMOTE_DIR='uploads/react-interface'
+
+#PROJECT DIRECTORY
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null && pwd )"
+
+# CREDENTIALS
+source $PROJECT_DIR'/src/custom-scripts/locals.sh'
 
 #LOCAL DIRECTORY
-LOCAL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null && pwd )"
-LOCAL_DIR=$LOCAL_DIR'/exports'
-
+LOCAL_DIR=$PROJECT_DIR'/build'
 
 # RUNTIME!
 echo
